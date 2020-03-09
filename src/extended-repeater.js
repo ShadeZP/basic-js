@@ -11,14 +11,16 @@ module.exports = function repeater(str, {
 
 
     for (let i = 1; i<additionRepeatTimes; i++) {
-        additionalRepeatStr += addition + additionSeparator;
+        additionalRepeatStr = additionalRepeatStr + addition + additionSeparator;
     }
+
+    additionalRepeatStr = additionalRepeatStr + addition;
 
     for (let i = 1; i<repeatTimes; i++) {
-        repeatStr = repeatStr + str + separator + additionalRepeatStr;
+        repeatStr = repeatStr + str + additionalRepeatStr + separator;
     }
 
-    repeatStr += str;
+    repeatStr = repeatStr +str + additionalRepeatStr;
 
     return repeatStr;
 };
